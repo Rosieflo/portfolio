@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>신라호텔 상세페이지</title>
+    <style>
+        *{margin:0px; padding:0px;}
+        body{background-color: rgb(27, 27, 27);}
+        a{text-decoration: none; color: #fff;}
+        body > img{
+            position: relative;
+                left: 50%;
+            transform: translate(-50%);
+        }
+        aside a{
+            position: fixed;
+                right: 100px;
+                top: 800px;
+
+            width: 80px;
+            height: 80px;
+            border-radius: 40px;
+
+            font-size: 20px;
+            line-height: 77px;
+            text-align: center;
+            background-color: #49423a;
+
+            display: none;
+            z-index: 1000;
+            transition: 0.3s;
+        }
+        aside a:hover{
+            border-radius: 10px;
+            color: #333;
+            background-color: #f1e3c4;
+        }
+    </style>
+
+    <!-- 제이쿼리 -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+        $(window).scroll(function(){
+            
+            let sPos = $(this).scrollTop();
+
+            console.log(sPos);
+
+            if(sPos >= 500){
+                $('aside a').fadeIn();
+            }else{
+                $('aside a').fadeOut();
+            }
+        });
+
+        $('aside a').click(function(){
+            $('html,body').animate({scrollTop : 0}, 700);
+            return false;
+        });
+    </script>
+
+</head>
+<body>
+    <aside><a href="shila.html" title="상단 바로가기">Top</a></aside>
+    <img src="./img/shila_detail.jpg" alt="신라호텔 상세페이지">
+</body>
+</html>
