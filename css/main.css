@@ -202,6 +202,7 @@ header .gnb a{
     line-height: 22px;
     font-family: 'Noto Sans KR';
 }
+.profile_box ul li:last-child{color: #00a1e3;}
 .line{
     position: absolute;
         left: 360px;
@@ -227,7 +228,7 @@ header .gnb a{
     color: #169CE8;
     font-family: 'Segoe UI';
 }
-.profile_box2 ul li:nth-child(4), .profile_box2 ul li:nth-child(8){
+.profile_box2 ul li:nth-child(6), .profile_box2 ul li:nth-child(11){
     font-size: 1.5rem;
     font-weight: 800;
     color: #169CE8;
@@ -539,13 +540,6 @@ header .gnb a{
     font-size: 0.8rem;
     font-family: 'Noto Sans KR';
     text-align: center;
-    line-height: 23px;
+    line-height: 25px;
     letter-spacing:2px;
-}
-.f_box > a > img{
-    position: relative;
-        top: 47px;
-        left: 597px;
-    width: 22px;
-    margin-left: 14px;
 }
