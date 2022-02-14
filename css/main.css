@@ -1,545 +1,793 @@
 @charset "utf-8";
 
 /* Top 버튼 */
-#MOVE_TOP_BTN{
-    position: fixed;
-        right: 4%;
-        bottom: 130px;
-    display: none;
-    z-index: 999;
-    cursor: pointer;
+#MOVE_TOP_BTN {
+  position: fixed;
+  right: 4%;
+  bottom: 130px;
+  display: none;
+  z-index: 999;
+  cursor: pointer;
 
-    width: 80px;
-    height: 80px;
-    border-radius: 50px;
-    background-color: #169CE8;
-    text-align: center;
-    line-height: 80px;
+  width: 80px;
+  height: 80px;
+  border-radius: 50px;
+  background-color: #169ce8;
+  text-align: center;
+  line-height: 80px;
 
-    color: #fff;
-    font-size:20px;
-    font-family:'Segoe UI';
-    transition: 0.3s;
+  color: #fff;
+  font-size: 20px;
+  font-family: "Segoe UI";
+  transition: 0.3s;
 }
-.btn_on{
-    background-color: #005ac2 !important;
-    border-radius: 14px !important;
+.btn_on {
+  background-color: #005ac2 !important;
+  border-radius: 14px !important;
 }
 
+header {
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  height: 100px;
+  transition: 0.3s;
+  z-index: 10000;
 
-header{
-    position: fixed;
-        top: 0px;
-    width: 100%;
-    height: 100px;
-    transition: 0.3s;
-    z-index: 100;
-
-    background: rgb(255, 255, 255);
-    border-bottom: 1px solid rgb(230, 230, 230);
+  background: rgb(255, 255, 255);
+  border-bottom: 1px solid rgb(230, 230, 230);
 }
 
 /* 제이쿼리_헤더에 마우스 오버시 */
-.h_on{
-    background: linear-gradient(to right, #00a1e3 0%,#07a8b9 21%,#920783 51%,#68005d 76%,#df89b7 100%) !important;
-    border-bottom: none !important;
-    box-shadow : 0px 2px 5px rgb(182, 182, 182);
-  }
-.on{
-    color: #fff !important;
+.h_on {
+  background: linear-gradient(
+    to right,
+    #00a1e3 0%,
+    #07a8b9 21%,
+    #920783 51%,
+    #68005d 76%,
+    #df89b7 100%
+  ) !important;
+  border-bottom: none !important;
+  box-shadow: 0px 2px 5px rgb(182, 182, 182);
+}
+.on {
+  color: #fff !important;
 }
 
 /* 헤더 로고 */
-h1, h1 a img{
-    position : absolute;
-        top: -3px;
-        left: -10px;
-    width: 134px;
+h1,
+h1 a img {
+  position: absolute;
+  top: -3px;
+  left: -10px;
+  width: 134px;
 }
 
 /* 헤더 네비게이션 */
-header .head{
-    position: relative;
-    width: 1280px;
-    height:100px;
-    margin: 0px auto;
+header .head {
+  position: relative;
+  width: 1280px;
+  height: 100px;
+  margin: 0px auto;
 }
-header nav{
-    position: absolute;
-        right : -50px;
-    width: 750px;
-    height: 110px;
-    margin: 0px auto;
-    line-height: 94px;
+header nav {
+  position: absolute;
+  right: -50px;
+  width: 750px;
+  height: 110px;
+  margin: 0px auto;
+  line-height: 94px;
 }
-header .gnb{
-    display: flex;
-    justify-content: space-around;
+header .gnb {
+  display: flex;
+  justify-content: space-around;
 }
-header .gnb a{
-    color: #333;
-    font-weight: bold;
-    font-size: 1.25rem;
-    font-family: 'Noto Sans KR';
+header .gnb a {
+  color: #333;
+  font-weight: bold;
+  font-size: 1.25rem;
+  font-family: "Noto Sans KR";
 }
-
-
 
 /* 인트로 */
-#intro{
-    position: relative;
-    height: 940px;
+#intro {
+  position: relative;
+  height: 940px;
 }
-#intro img{
-    position:absolute;
-        top: 60px;
-        left:-34px;
+#intro img {
+  position: absolute;
+  top: 60px;
+  left: -34px;
 }
-.intro_box{
-    position: relative;
-    width: 1280px;
-    height: 940px;
-    margin: 0px auto;
+.intro_box {
+  position: relative;
+  width: 1280px;
+  height: 940px;
+  margin: 0px auto;
 }
-.intro_box span{
-    position:absolute;
-        top: 330px;
-        right: 0px;
-    color: rgb(110, 110, 110);
-    font-size: 2rem;
-    font-weight: 300;
+.intro_box span {
+  position: absolute;
+  top: 330px;
+  right: 0px;
+  color: rgb(110, 110, 110);
+  font-size: 2rem;
+  font-weight: 300;
 }
-.intro_box p{
-    position: absolute;
-        top: 370px;
-        right: 0px;
-    font-size: 4.2rem;
-    font-weight: 900;
-    z-index: 10;
+.intro_box p {
+  position: absolute;
+  top: 370px;
+  right: 0px;
+  font-size: 4.2rem;
+  font-weight: 900;
+  z-index: 10;
 }
-.intro_box ul{
-    position: absolute;
-        right: 0px;
-        bottom: 90px;
+.intro_box ul {
+  position: absolute;
+  right: 0px;
+  bottom: 90px;
 }
-.intro_box ul li{
-    font-size: 1.6rem;
-    font-weight: 900;
-    line-height: 46px;
+.intro_box ul li {
+  font-size: 1.6rem;
+  font-weight: 900;
+  line-height: 46px;
 }
-
-
 
 /* 프로필 */
-#profile{
-    padding-top: 60px;
-    height: 940px;
-    background-color: #F3F3F3;
+#profile {
+  padding-top: 60px;
+  height: 940px;
+  background-color: #f3f3f3;
 }
-.profile_box{
-    position: relative;
-    width: 1280px;
-    height: 840px;
-    margin: 0px auto;
-    /* background: rgb(145, 252, 252); */
+.profile_box {
+  position: relative;
+  width: 1280px;
+  height: 840px;
+  margin: 0px auto;
+  /* background: rgb(145, 252, 252); */
 }
-.profile_box p{
-    position: absolute;
-        top: 100px;
-        left: 0px;
-    font-size: 2.7rem;
-    font-weight: 900;
-    z-index: 10;
+.profile_box p {
+  position: absolute;
+  top: 100px;
+  left: 0px;
+  font-size: 2.7rem;
+  font-weight: 900;
+  z-index: 10;
 }
-.profile_box img{
-    position: absolute;
-        top: 80px;
-        left: 123px;
-    font-size: 2.7rem;
-    font-weight: 900;
+.profile_box img {
+  position: absolute;
+  top: 80px;
+  left: 123px;
+  font-size: 2.7rem;
+  font-weight: 900;
 }
-.self_img > img{
-    position: absolute;
-        left: 0px;
-        top: 214px;
-    width: 260px;
+.self_img > img {
+  position: absolute;
+  left: 0px;
+  top: 214px;
+  width: 260px;
 }
-.profile_box ul{
-    position: absolute;
-        left: 0px;
-        bottom: 80px;
+.profile_box ul {
+  position: absolute;
+  left: 0px;
+  bottom: 80px;
 }
-.profile_box ul li{line-height: 28px;}
-.profile_box ul li:first-child{
-    font-size: 1.4rem;
-    font-weight: 900;
-    color: #169CE8;
+.profile_box ul li {
+  line-height: 28px;
 }
-.profile_box ul li:nth-child(2){
-    font-size: 1.3rem;
-    font-weight: 700;
-    color: #169CE8;
+.profile_box ul li:first-child {
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: #169ce8;
 }
-.profile_box ul li:nth-child(3){
-    font-size: 1rem;
-    font-weight: 400;
-    color: #169CE8;
-    font-family: 'Noto Sans KR';
+.profile_box ul li:nth-child(2) {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #169ce8;
 }
-.profile_box ul li:nth-child(4){
-    margin-top: 26px;
-    font-size: 1rem;
-    font-weight: 400;
-    font-family: 'Noto Sans KR';
+.profile_box ul li:nth-child(3) {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #169ce8;
+  font-family: "Noto Sans KR";
 }
-.profile_box ul li:nth-child(5){
-    font-size: 1rem;
-    font-weight: 400;
-    font-family: 'Noto Sans KR';
+.profile_box ul li:nth-child(4) {
+  margin-top: 26px;
+  font-size: 1rem;
+  font-weight: 400;
+  font-family: "Noto Sans KR";
 }
-.profile_box ul li:nth-child(6){
-    margin-top: 26px;
-    line-height: 22px;
-    font-family: 'Noto Sans KR';
+.profile_box ul li:nth-child(5) {
+  font-size: 1rem;
+  font-weight: 400;
+  font-family: "Noto Sans KR";
 }
-.profile_box ul li:last-child{color: #00a1e3;}
-.line{
-    position: absolute;
-        left: 360px;
-        bottom: 84px;
-    width: 1px;
-    height: 660px;
-    background: rgb(212, 212, 212);
+.profile_box ul li:nth-child(6) {
+  margin-top: 26px;
+  line-height: 22px;
+  font-family: "Noto Sans KR";
 }
-.profile_box2{width: 370px;}
-.profile_box2 > ul{
-    position: relative;
-        top: -758px;
-        left: 750px;
+.profile_box ul li:last-child {
+  color: #00a1e3;
 }
-.profile_box2 ul li{
-    font-family: 'Noto Sans KR';
-    font-size: 1rem;
-    line-height: 38px;
+.line {
+  position: absolute;
+  left: 360px;
+  bottom: 84px;
+  width: 1px;
+  height: 660px;
+  background: rgb(212, 212, 212);
 }
-.profile_box2 ul li:first-child{
-    font-size: 1.5rem;
-    font-weight: 800;
-    color: #169CE8;
-    font-family: 'Segoe UI';
+.profile_box2 {
+  width: 370px;
 }
-.profile_box2 ul li:nth-child(6), .profile_box2 ul li:nth-child(11){
-    font-size: 1.5rem;
-    font-weight: 800;
-    color: #169CE8;
-    font-family: 'Segoe UI';
-    margin-top: 37px;
+.profile_box2 > ul {
+  position: relative;
+  top: -758px;
+  left: 750px;
 }
-.profile_box3{width: 330px;}
-.profile_box3 > ul{
-    position: relative;
-        top: -1440px;
-        left: 1230px;
+.profile_box2 ul li {
+  font-family: "Noto Sans KR";
+  font-size: 1rem;
+  line-height: 38px;
 }
-.profile_box3 ul li{
-    font-family: 'Noto Sans KR';
-    font-size: 1rem;
-    line-height: 38px;
+.profile_box2 ul li:first-child {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #169ce8;
+  font-family: "Segoe UI";
 }
-.profile_box3 ul li:first-child{
-    font-size: 1.5rem;
-    font-weight: 800;
-    color: #169CE8;
-    font-family: 'Segoe UI';
+.profile_box2 ul li:nth-child(6),
+.profile_box2 ul li:nth-child(11) {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #169ce8;
+  font-family: "Segoe UI";
+  margin-top: 37px;
 }
-.profile_box3 ul li:nth-child(4){
-    font-size: 1.5rem;
-    font-weight: 800;
-    color: #169CE8;
-    font-family: 'Segoe UI';
-    margin-top: 36px;
+.profile_box3 {
+  width: 330px;
 }
-
-
+.profile_box3 > ul {
+  position: relative;
+  top: -1440px;
+  left: 1230px;
+}
+.profile_box3 ul li {
+  font-family: "Noto Sans KR";
+  font-size: 1rem;
+  line-height: 38px;
+}
+.profile_box3 ul li:first-child {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #169ce8;
+  font-family: "Segoe UI";
+}
+.profile_box3 ul li:nth-child(4) {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #169ce8;
+  font-family: "Segoe UI";
+  margin-top: 36px;
+}
 
 /* 스킬바 */
-*{box-sizing:border-box}
-.container1{
-    width: 320px;
-    height: 42px;
+* {
+  box-sizing: border-box;
 }
-.wrap{
-    position: relative;
-        top: -1420px;
-        right: -428px;
-    width: 300px;
-    margin: auto;
+.container1 {
+  width: 320px;
+  height: 42px;
 }
-.wrap p{
-    font-family: 'Noto Sans KR';
-    font-size: 0.8rem;
-    margin-bottom: 5px;
+.wrap {
+  position: relative;
+  top: -1420px;
+  right: -428px;
+  width: 300px;
+  margin: auto;
 }
-.bar{
-    font-family: 'Noto Sans KR';
-    text-align: right;
-    padding: 7px 14px 10px 0;
-    color: rgb(210, 238, 255);
-
+.wrap p {
+  font-family: "Noto Sans KR";
+  font-size: 0.8rem;
+  margin-bottom: 5px;
 }
-.photoshop, .xd, .sketch, .ill, .dream, .in, .vs, .os{
-    width: 10%;
-    height: 28px;
-    border-radius: 30px;
-    background: linear-gradient(90deg, rgba(71,188,255,1) 0%,rgba(28,130,196,1) 100%);
+.bar {
+  font-family: "Noto Sans KR";
+  text-align: right;
+  padding: 7px 14px 10px 0;
+  color: rgb(210, 238, 255);
 }
-
-
+.photoshop,
+.xd,
+.sketch,
+.ill,
+.dream,
+.in,
+.vs,
+.os {
+  width: 10%;
+  height: 28px;
+  border-radius: 30px;
+  background: linear-gradient(
+    90deg,
+    rgba(71, 188, 255, 1) 0%,
+    rgba(28, 130, 196, 1) 100%
+  );
+}
 
 /* 컨텐츠 */
-#list{
-    padding-top: 60px;
-    height: 1000px;
+#list {
+  padding-top: 60px;
+  height: 1000px;
 }
-.list_box{
-    position: relative;
-    width: 1280px;
-    height: 840px;
-    margin: 0px auto;
-    /* background: rgb(145, 252, 252); */
+.list_box {
+  position: relative;
+  width: 1280px;
+  height: 840px;
+  margin: 0px auto;
+  /* background: rgb(145, 252, 252); */
 }
-.list_box p{
-    position: absolute;
-        top: 100px;
-        right: 0px;
-    font-size: 2.7rem;
-    font-weight: 900;
-    z-index: 10;
+.list_box p {
+  position: absolute;
+  top: 100px;
+  right: 0px;
+  font-size: 2.7rem;
+  font-weight: 900;
+  z-index: 10;
 }
-.list_box img{
-    position: absolute;
-        top: 80px;
-        right: 286px;
-    font-size: 2.7rem;
-    font-weight: 900;
+.list_box img {
+  position: absolute;
+  top: 80px;
+  right: 286px;
+  font-size: 2.7rem;
+  font-weight: 900;
 }
 
 /* 신라호텔 */
-.list01 img{
-    position:absolute;
-        top: 230px;
-        left: 0px;
+.list01 img {
+  position: absolute;
+  top: 230px;
+  left: 0px;
 }
-.list01 > ul{
-    position: absolute;
-        top: 230px;
-        left: 330px;
+.list01 > ul {
+  position: absolute;
+  top: 230px;
+  left: 330px;
 }
-.list01 > ul > li{
-    font-size: 0.9rem;
-    line-height: 26px;
+.list01 > ul > li {
+  font-size: 0.9rem;
+  line-height: 26px;
 }
-.list01 > ul > li:first-child{
-    font-size: 1.2rem;
-    font-weight: bold;
-    margin-bottom: 14px;
+.list01 > ul > li:first-child {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 14px;
 }
 
 /* 바르다김선생 */
-.list02 img{
-    position:absolute;
-        top:436px;
-        left: 0px;
+.list02 img {
+  position: absolute;
+  top: 436px;
+  left: 0px;
 }
-.list02 > ul{
-    position: absolute;
-        top: 436px;
-        left: 330px;
+.list02 > ul {
+  position: absolute;
+  top: 436px;
+  left: 330px;
 }
-.list02 > ul > li{
-    font-size: 0.9rem;
-    line-height: 26px;
+.list02 > ul > li {
+  font-size: 0.9rem;
+  line-height: 26px;
 }
-.list02 > ul > li:first-child{
-    font-size: 1.2rem;
-    font-weight: bold;
-    margin-bottom: 14px;
+.list02 > ul > li:first-child {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 14px;
 }
 
 /* 오담 */
-.list03 img{
-    position:absolute;
-        top: 640px;
-        left: 0px;
+.list03 img {
+  position: absolute;
+  top: 640px;
+  left: 0px;
 }
-.list03 > ul{
-    position: absolute;
-        top: 640px;
-        left: 330px;
+.list03 > ul {
+  position: absolute;
+  top: 640px;
+  left: 330px;
 }
-.list03 > ul > li{
-    font-size: 0.9rem;
-    line-height: 26px;
+.list03 > ul > li {
+  font-size: 0.9rem;
+  line-height: 26px;
 }
-.list03 > ul > li:first-child{
-    font-size: 1.2rem;
-    font-weight: bold;
-    margin-bottom: 14px;
+.list03 > ul > li:first-child {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 14px;
 }
 
 /* 리그오브레전드 */
-.list04 img{
-    position:absolute;
-        top: 230px;
-        right: 240px;
+.list04 img {
+  position: absolute;
+  top: 230px;
+  right: 240px;
 }
-.list04 > ul{
-    position: absolute;
-        top: 230px;
-        right: 40px;
+.list04 > ul {
+  position: absolute;
+  top: 230px;
+  right: 40px;
 }
-.list04 > ul > li{
-    font-size: 0.9rem;
-    line-height: 26px;
+.list04 > ul > li {
+  font-size: 0.9rem;
+  line-height: 26px;
 }
-.list04 > ul > li:first-child{
-    font-size: 1.2rem;
-    font-weight: bold;
-    margin-bottom: 14px;
+.list04 > ul > li:first-child {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 14px;
 }
 
 /* 구좌당 */
-.list05 img{
-    position:absolute;
-        top:436px;
-        right: 240px;
+.list05 img {
+  position: absolute;
+  top: 436px;
+  right: 240px;
 }
-.list05 > ul{
-    position: absolute;
-        top: 436px;
-        right: 0px;
+.list05 > ul {
+  position: absolute;
+  top: 436px;
+  right: 0px;
 }
-.list05 > ul > li{
-    font-size: 0.9rem;
-    line-height: 26px;
+.list05 > ul > li {
+  font-size: 0.9rem;
+  line-height: 26px;
 }
-.list05 > ul > li:first-child{
-    font-size: 1.2rem;
-    font-weight: bold;
-    margin-bottom: 14px;
+.list05 > ul > li:first-child {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 14px;
 }
 
 /* 보스 스피커 */
-.list06 img{
-    position:absolute;
-        top:640px;
-        right: 240px;
+.list06 img {
+  position: absolute;
+  top: 640px;
+  right: 240px;
 }
-.list06 > ul{
-    position: absolute;
-        top: 640px;
-        right: 76px;
+.list06 > ul {
+  position: absolute;
+  top: 640px;
+  right: 76px;
 }
-.list06 > ul > li{
-    font-size: 0.9rem;
-    line-height: 26px;
+.list06 > ul > li {
+  font-size: 0.9rem;
+  line-height: 26px;
 }
-.list06 > ul > li:first-child{
-    font-size: 1.2rem;
-    font-weight: bold;
-    margin-bottom: 14px;
+.list06 > ul > li:first-child {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 14px;
 }
 
-
-
-.line2{
-    width: 100%;
-    height: 1px;
-    background: rgb(212, 212, 212);
-    /* box-shadow: 0px 4px 10px gray; */
+.line2 {
+  width: 100%;
+  height: 1px;
+  background: rgb(212, 212, 212);
+  /* box-shadow: 0px 4px 10px gray; */
 }
 
 /* 포트폴리오 */
-#portfolio{
-    padding-top: 60px;
-    height: 2180px;
+#portfolio {
+  padding-top: 60px;
+  height: 2180px;
 }
-.port_box{
-    position: relative;
-    width: 1280px;
-    height: 2100px;
-    margin: 0px auto;
+.port_box {
+  position: relative;
+  width: 1280px;
+  height: 2100px;
+  margin: 0px auto;
 }
-.port_box p{
-    position: absolute;
-        top: 100px;
-        left: 0px;
-    font-size: 2.7rem;
-    font-weight: 900;
-    z-index: 10;
+.port_box p {
+  position: absolute;
+  top: 100px;
+  left: 0px;
+  font-size: 2.7rem;
+  font-weight: 900;
+  z-index: 10;
 }
-.p_title{
-    position: absolute;
-        top: 80px;
-        left: 180px;
-    font-size: 2.7rem;
-    font-weight: 900;
+.p_title {
+  position: absolute;
+  top: 80px;
+  left: 180px;
+  font-size: 2.7rem;
+  font-weight: 900;
 }
-.p_con > a:first-child > img{position: absolute; right: 400px; bottom: 1220px;}
-.p_con > a:nth-child(2) > img{position: absolute; right: -40px; bottom: 1280px;}
-.p_con > a:nth-child(3) > img{position: absolute; right: 400px; bottom: 614px;}
-.p_con > a:nth-child(4) > img{position: absolute; right: -40px; bottom: 670px;}
-.p_con > a:nth-child(5) > img{position: absolute; right: 400px; bottom: 24px;}
-.p_con > a:last-child > img{position: absolute; right: -40px; bottom: 84px;}
 
 
+
+/* 신라 포폴 */
+.shila_box {
+  position: absolute;
+  right: 400px;
+  bottom: 1220px;
+}
+.s_box {
+  display: none;
+  position: absolute;
+  right: 455px;
+  bottom: 1324px;
+  width: 395px;
+  height: 567px;
+  border-radius: 30px;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 1000;
+}
+.s_box > a:nth-child(2) {
+  position: absolute;
+  top: 280px;
+  left: 88px;
+  width: 100px;
+  height: 34px;
+  text-align: center;
+  font-size: 14px;
+  background-color: #ccc;
+  border-radius: 10px;
+  line-height: 34px;
+  z-index: 10;
+}
+.s_box > a:last-child {
+  position: absolute;
+  top: 280px;
+  left: 208px;
+  width: 100px;
+  height: 34px;
+  text-align: center;
+  font-size: 14px;
+  background-color: #ccc;
+  border-radius: 10px;
+  line-height: 34px;
+  z-index: 10;
+}
+
+/* 롤 포폴 */
+.lol_box{
+  position: absolute;
+  right: -40px;
+  bottom: 1280px;
+}
+.l_box {
+  display: none;
+  position: absolute;
+  left: 870px;
+  bottom: 1385px;
+  width: 395px;
+  height: 567px;
+  border-radius: 30px;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 1000;
+}
+.l_box > a:nth-child(2) {
+  position: absolute;
+  top: 280px;
+  left: 88px;
+  width: 100px;
+  height: 34px;
+  text-align: center;
+  font-size: 14px;
+  background-color: #ccc;
+  border-radius: 10px;
+  line-height: 34px;
+  z-index: 10;
+}
+.l_box > a:last-child {
+  position: absolute;
+  top: 280px;
+  left: 208px;
+  width: 100px;
+  height: 34px;
+  text-align: center;
+  font-size: 14px;
+  background-color: #ccc;
+  border-radius: 10px;
+  line-height: 34px;
+  z-index: 10;
+}
+
+/* 김선생 포폴 */
+.kim_box{
+  position: absolute;
+  right: 400px;
+  bottom: 614px;
+}
+.k_box {
+  display: none;
+  position: absolute;
+  left: 430px;
+  bottom: 719px;
+  width: 395px;
+  height: 567px;
+  border-radius: 30px;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 1000;
+}
+.k_box > a:nth-child(2) {
+  position: absolute;
+  top: 280px;
+  left: 88px;
+  width: 100px;
+  height: 34px;
+  text-align: center;
+  font-size: 14px;
+  background-color: #ccc;
+  border-radius: 10px;
+  line-height: 34px;
+  z-index: 10;
+}
+.k_box > a:last-child {
+  position: absolute;
+  top: 280px;
+  left: 208px;
+  width: 100px;
+  height: 34px;
+  text-align: center;
+  font-size: 14px;
+  background-color: #ccc;
+  border-radius: 10px;
+  line-height: 34px;
+  z-index: 10;
+}
+
+/* 구좌당 포폴 */
+.gu_box{
+  position: absolute;
+  right: -40px;
+  bottom: 670px;
+}
+.g_box {
+  display: none;
+  position: absolute;
+  left: 870px;
+  bottom: 775px;
+  width: 395px;
+  height: 567px;
+  border-radius: 30px;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 1000;
+}
+.g_box > a:last-child {
+  position: absolute;
+  top: 280px;
+  left: 144px;
+  width: 100px;
+  height: 34px;
+  text-align: center;
+  font-size: 14px;
+  background-color: #ccc;
+  border-radius: 10px;
+  line-height: 34px;
+  z-index: 10;
+}
+
+/* 에잇세컨즈 포폴 */
+.eight_box{
+  position: absolute;
+  right: 400px;
+  bottom: 24px;
+}
+.e_box {
+  display: none;
+  position: absolute;
+  left: 430px;
+  bottom: 109px;
+  width: 395px;
+  height: 567px;
+  border-radius: 30px;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 1000;
+}
+.e_box > a:last-child {
+  position: absolute;
+  top: 280px;
+  left: 144px;
+  width: 100px;
+  height: 34px;
+  text-align: center;
+  font-size: 14px;
+  background-color: #ccc;
+  border-radius: 10px;
+  line-height: 34px;
+  z-index: 10;
+}
+
+/* 보스 포폴 */
+.bose_box{
+  position: absolute;
+  right: -40px;
+  bottom: 84px;
+}
+.b_box {
+  display: none;
+  position: absolute;
+  left: 870px;
+  bottom: 169px;
+  width: 395px;
+  height: 567px;
+  border-radius: 30px;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 1000;
+}
+.b_box > a:nth-child(2) {
+  position: absolute;
+  top: 280px;
+  left: 88px;
+  width: 100px;
+  height: 34px;
+  text-align: center;
+  font-size: 14px;
+  background-color: #ccc;
+  border-radius: 10px;
+  line-height: 34px;
+  z-index: 10;
+}
+.b_box > a:last-child {
+  position: absolute;
+  top: 280px;
+  left: 208px;
+  width: 100px;
+  height: 34px;
+  text-align: center;
+  font-size: 14px;
+  background-color: #ccc;
+  border-radius: 10px;
+  line-height: 34px;
+  z-index: 10;
+}
 
 /* 갤러리 */
-#galelry{
-    width: 100%;
-    height: 200px;
+#galelry {
+  width: 100%;
+  height: 200px;
 }
-.gal_box{
-    position: relative;
-    width: 1280px;
-    margin: 0px auto;
+.gal_box {
+  position: relative;
+  width: 1280px;
+  margin: 0px auto;
 }
-.gal_box p{
-    position: absolute;
-        top: 100px;
-        right: 0px;
-    font-size: 2.7rem;
-    font-weight: 900;
-    z-index: 10;
+.gal_box p {
+  position: absolute;
+  top: 100px;
+  right: 0px;
+  font-size: 2.7rem;
+  font-weight: 900;
+  z-index: 10;
 }
-.gal_box img{
-    position: absolute;
-        top: 80px;
-        right: 136px;
-    font-size: 2.7rem;
-    font-weight: 900;
+.gal_box img {
+  position: absolute;
+  top: 80px;
+  right: 136px;
+  font-size: 2.7rem;
+  font-weight: 900;
 }
 
-
-
- /* 푸터 서식 */
- footer{
-    height: 170px; 
-    background-color: #252525;
+/* 푸터 서식 */
+footer {
+  height: 170px;
+  background-color: #252525;
 }
-.f_box{
-    position:relative;
-    width: 1280px;
-    height: 170px;
-    margin: 0px auto;
+.f_box {
+  position: relative;
+  width: 1280px;
+  height: 170px;
+  margin: 0px auto;
 }
-.f_box > p{
-    position: relative;
-        top: 60px;
-    color: #ccc;
-    font-size: 0.8rem;
-    font-family: 'Noto Sans KR';
-    text-align: center;
-    line-height: 25px;
-    letter-spacing:2px;
+.f_box > p {
+  position: relative;
+  top: 60px;
+  color: #ccc;
+  font-size: 0.8rem;
+  font-family: "Noto Sans KR";
+  text-align: center;
+  line-height: 25px;
+  letter-spacing: 2px;
 }

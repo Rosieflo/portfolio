@@ -1,23 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>포트폴리오 2022 ver.</title>
     <!-- 파비콘 -->
-    <link rel="shortcut icon" type="image/x-icon" href="./img/icon_xwe_icon.ico">
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="./img/icon_xwe_icon.ico"
+    />
 
     <!-- css 초기화 -->
-    <link href="./css/reset.css" rel="stylesheet" type="text/css">
+    <link href="./css/reset.css" rel="stylesheet" type="text/css" />
     <!-- 공통서식 -->
-    <link href="./css/base.css" rel="stylesheet" type="text/css">
+    <link href="./css/base.css" rel="stylesheet" type="text/css" />
     <!-- 메인서식 -->
-    <link href="./css/main.css" rel="stylesheet" type="text/css">
+    <link href="./css/main.css" rel="stylesheet" type="text/css" />
     <!-- 이미지 슬라이드 서식 -->
-    <link href="./css/slide.css" rel="stylesheet" type="text/css">
+    <link href="./css/slide.css" rel="stylesheet" type="text/css" />
     <!-- 폰트어썸 주소 -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
 
     <!-- css3 접두사 자동으로 생성시켜주는 스크립트 -->
     <script src="./script/prefixfree.min.js"></script>
@@ -28,464 +35,513 @@
     <!-- 제이쿼리 이미지 슬라이드 -->
     <script src="./script/amazon_scroller.js"></script>
     <script>
-      $(document).ready(function(){
-
+      $(document).ready(function () {
         // 상단 큰 로고 움직이기
-        function ani(){
-         $('.photo').animate({"top":"80px"},1500).animate({"top":"50px"},1300);
+        function ani() {
+          $(".photo")
+            .animate({ top: "80px" }, 1500)
+            .animate({ top: "50px" }, 1300);
         }
 
         ani();
 
-        let Timer = setInterval(ani,2800);
-
+        let Timer = setInterval(ani, 2800);
 
         // 갤러리 이미지 슬라이드
         $("#amazon_scroller2").amazon_scroller({
-                scroller_title_show: 'disable',
-                scroller_time_interval: '2400', //사진 슬라이드 타임
-                scroller_border_size: '0',
-                scroller_border_color: '#CCC',
-                scroller_images_width: '369', //사진 가로 사이즈
-                scroller_images_height: '324',//사진 세로 사이즈
-                scroller_show_count: '4', //화면에 보여지는 이미지 갯수
-                directory: 'images'
-            });
-        
-        $('.amazon_scroller').css('height',355);
-        $('.amazon_scroller_mask').css('height',355);
-        
-        // 헤더 마우스 오버, 스크롤 동작시 변경 모션
-        $('header').hover(function(){
-                //마우스 오버시 동작
-                $(this).addClass('h_on');
-                $(this).find('.gnb a').addClass('on');
-                $(this).find('h1 img').hide();
-
-            },function(){ //마우스를 빼면 동작
-                $(this).removeClass('h_on');
-                $(this).find('.gnb a').removeClass('on');
-                $(this).find('h1 img').show();
+          scroller_title_show: "disable",
+          scroller_time_interval: "2400", //사진 슬라이드 타임
+          scroller_border_size: "0",
+          scroller_border_color: "#CCC",
+          scroller_images_width: "369", //사진 가로 사이즈
+          scroller_images_height: "324", //사진 세로 사이즈
+          scroller_show_count: "4", //화면에 보여지는 이미지 갯수
+          directory: "images",
         });
 
+        $(".amazon_scroller").css("height", 355);
+        $(".amazon_scroller_mask").css("height", 355);
+
+        // 헤더 마우스 오버, 스크롤 동작시 변경 모션
+        $("header").hover(
+          function () {
+            //마우스 오버시 동작
+            $(this).addClass("h_on");
+            $(this).find(".gnb a").addClass("on");
+            $(this).find("h1 img").hide();
+          },
+          function () {
+            //마우스를 빼면 동작
+            $(this).removeClass("h_on");
+            $(this).find(".gnb a").removeClass("on");
+            $(this).find("h1 img").show();
+          }
+        );
+
         // 스크롤 서식
-        $(window).scroll(function(){
+        $(window).scroll(function () {
+          let sPos = $(this).scrollTop();
 
-            let sPos = $(this).scrollTop();
+          console.log(sPos);
 
-            console.log(sPos);
+          // 1. 스크롤 내릴 시 헤더 서식 변경
+          if (sPos >= 830) {
+            $("header").addClass("h_on");
+            $(".gnb a").addClass("on");
+            $("h1 img").hide();
+          } else {
+            $("header").removeClass("h_on");
+            $(".gnb a").removeClass("on");
+            $("h1 img").show();
+          }
 
-        // 1. 스크롤 내릴 시 헤더 서식 변경
-            if(sPos >= 830){
-                $('header').addClass('h_on');
-                $('.gnb a').addClass('on');
-                $('h1 img').hide();
-            }else{
-                $('header').removeClass('h_on');
-                $('.gnb a').removeClass('on');
-                $('h1 img').show();
+          // 2. 스킬바 나오게 하기
+          $(".container1").each(function (i) {
+            if (sPos >= 700) {
+              let skill = $(this).find(".bar");
+              let percent = skill.text();
+
+              skill.stop().animate({ width: percent });
+            } else if (sPos <= 600) {
+              $(".bar").css("width", "10%");
             }
+          });
 
-        // 2. 스킬바 나오게 하기
-            $('.container1').each(function(i){
-           
-              if(sPos>=700){
-        
-                  let skill = $(this).find('.bar');
-                  let percent = skill.text();
+          // 3. 탑버튼
+          if (sPos >= 400) {
+            $("#MOVE_TOP_BTN").fadeIn();
+          } else {
+            $("#MOVE_TOP_BTN").fadeOut();
+          }
 
-                  skill.stop().animate({'width':percent});
-              
-              }else if(sPos<=600){
-                  $('.bar').css('width','10%');
-              }
-           });
-
-        // 3. 탑버튼
-            if(sPos >= 400){
-                $('#MOVE_TOP_BTN').fadeIn();
-            }else{
-                $('#MOVE_TOP_BTN').fadeOut();
-            }
-
-        // 4. 포트폴리오 컨텐츠
-            if(sPos >= 2881){
-                $('.p_con > a:first-child > img').animate({bottom:1270},200);
-                $('.p_con > a:nth-child(2) > img').animate({bottom:1330},400);
-                $('.p_con > a:nth-child(3) > img').animate({bottom:664},600);
-                $('.p_con > a:nth-child(4) > img').animate({bottom:720},800);
-                $('.p_con > a:nth-child(5) > img').animate({bottom:54},1000);
-                $('.p_con > a:last-child > img').animate({bottom:114},1200);
-            }
+          // 4. 포트폴리오 컨텐츠
+          if (sPos >= 2881) {
+            $(".shila_box").animate({ bottom: 1270 }, 200);
+            $(".lol_box").animate({ bottom: 1330 }, 400);
+            $(".kim_box").animate({ bottom: 664 }, 600);
+            $(".gu_box").animate({ bottom: 720 }, 800);
+            $(".eight_box").animate({ bottom: 54 }, 1000);
+            $(".bose_box").animate({ bottom: 114 }, 1200);
+          }
         });
 
         // Top 버튼
-        $('#MOVE_TOP_BTN').click(function(){
-            $('html,body').animate({scrollTop : 0}, 700);
-            return false;
+        $("#MOVE_TOP_BTN").click(function () {
+          $("html,body").animate({ scrollTop: 0 }, 700);
+          return false;
         });
 
-        $('#MOVE_TOP_BTN').hover(function(){
-            $(this).addClass('btn_on');
-          },function(){
-            $(this).removeClass('btn_on');
-        });
-
+        $("#MOVE_TOP_BTN").hover(
+          function () {
+            $(this).addClass("btn_on");
+          },
+          function () {
+            $(this).removeClass("btn_on");
+          }
+        );
 
         // 포트폴리오 컨텐츠 마우스 오버
-        $('.p_con > a:first-child').hover(function(){
-            $(this).stop().animate({opacity:'.85'},500);
-            $(this).find('img').attr('src','./img/hover01.png');
-        },function(){
-            $(this).stop().animate({opacity:'1'},500);
-            $(this).find('img').attr('src','./img/con01.png');
+        $('.shila_box').mouseenter(function () {
+          $('.s_box').stop().fadeIn();
+        });
+        $('.s_box').mouseleave(function () {
+          $(this).stop().fadeOut();
         });
 
-        $('.p_con > a:nth-child(2)').hover(function(){
-            $(this).stop().animate({opacity:'.85'},500);
-            $(this).find('img').attr('src','./img/hover02.png');
-        },function(){
-            $(this).stop().animate({opacity:'1'},500);
-            $(this).find('img').attr('src','./img/con02.png');
+        $('.lol_box').mouseenter(function () {
+          $('.l_box').stop().fadeIn();
+        });
+        $('.l_box').mouseleave(function () {
+          $(this).stop().fadeOut();
         });
 
-        $('.p_con > a:nth-child(3)').hover(function(){
-            $(this).stop().animate({opacity:'.85'},500);
-            $(this).find('img').attr('src','./img/hover03.png');
-        },function(){
-            $(this).stop().animate({opacity:'1'},500);
-            $(this).find('img').attr('src','./img/con03.png');
+        $('.kim_box').mouseenter(function () {
+          $('.k_box').stop().fadeIn();
+        });
+        $('.k_box').mouseleave(function () {
+          $(this).stop().fadeOut();
         });
 
-        $('.p_con > a:nth-child(4)').hover(function(){
-            $(this).stop().animate({opacity:'.85'},500);
-            $(this).find('img').attr('src','./img/hover04.png');
-        },function(){
-            $(this).stop().animate({opacity:'1'},500);
-            $(this).find('img').attr('src','./img/con04.png');
+        $('.gu_box').mouseenter(function () {
+          $('.g_box').stop().fadeIn();
+        });
+        $('.g_box').mouseleave(function () {
+          $(this).stop().fadeOut();
         });
 
-        $('.p_con > a:nth-child(5)').hover(function(){
-            $(this).stop().animate({opacity:'.85'},500);
-            $(this).find('img').attr('src','./img/hover05.png');
-        },function(){
-            $(this).stop().animate({opacity:'1'},500);
-            $(this).find('img').attr('src','./img/con05.png');
+        $('.eight_box').mouseenter(function () {
+          $('.e_box').stop().fadeIn();
+        });
+        $('.e_box').mouseleave(function () {
+          $(this).stop().fadeOut();
         });
 
-        $('.p_con > a:last-child').hover(function(){
-            $(this).stop().animate({opacity:'.85'},500);
-            $(this).find('img').attr('src','./img/hover06.png');
-        },function(){
-            $(this).stop().animate({opacity:'1'},500);
-            $(this).find('img').attr('src','./img/con06.png');
+        $('.bose_box').mouseenter(function () {
+          $('.b_box').stop().fadeIn();
+        });
+        $('.b_box').mouseleave(function () {
+          $(this).stop().fadeOut();
         });
 
 
 
         // 모달창
-        let modal = '<div class="modal"><img src="./img/popup.jpg" alt="팝업"><p><input type="checkbox" id="ch"><label for="ch">오늘 하루 창 열지 않기</label><input type="button" value="닫기" id="c_btn"></p></div>';
+        let modal =
+          '<div class="modal"><img src="./img/popup.jpg" alt="팝업"><p><input type="checkbox" id="ch"><label for="ch">오늘 하루 창 열지 않기</label><input type="button" value="닫기" id="c_btn"></p></div>';
 
         // body 태그의 안쪽으로 맨 뒤에 모달내용 출력하기
-        $('body').append(modal);
+        $("body").append(modal);
 
         // 제이쿼리 쿠키 사용법
         // $.cookie(‘쿠키이름’,’쿠키값’,{expires:만료일, path:’저장경로’});
 
         // 1. 사용자의 브라우저에 쿠키값이 none일때
-        if($.cookie('popup')=='none'){
-        $('.modal').hide();
+        if ($.cookie("popup") == "none") {
+          $(".modal").hide();
         }
 
-        let $ex = $('.modal #ch'); // 체크박스 변수선언하기
+        let $ex = $(".modal #ch"); // 체크박스 변수선언하기
 
         // 사용자가 체크박스에 체크를 했는지 안했는지 확인하는 함수
-        function closeModal(){
-         if($ex.is(':checked')){ // 체크박스에 체크가 된 경우
-          $.cookie('popup','none',{expires:1, path:'/'}); // 쿠키파일 생성하고
+        function closeModal() {
+          if ($ex.is(":checked")) {
+            // 체크박스에 체크가 된 경우
+            $.cookie("popup", "none", { expires: 1, path: "/" }); // 쿠키파일 생성하고
           }
-          $('.modal').hide(); // 팝업 숨김
-          }
+          $(".modal").hide(); // 팝업 숨김
+        }
 
         // 체크하지 않고 그냥 닫기를 누르는 경우
-        $('#c_btn').click(function(){
+        $("#c_btn").click(function () {
           closeModal();
-          });
-
         });
-
+      });
     </script>
-</head>
+  </head>
 
-
-
-<body>
+  <body>
     <!-- 헤더영역시작 -->
     <header>
-        <div class="head">
-            <h1>
-                <a href="index.html" title="메인으로 바로가기">
-                  <img src="./img/logo.png" alt="상단 로고">
-                </a>
-            </h1>
-    
-            <nav>
-                <ul class="gnb">
-                  <li><a href="#profile" title="프로필" class="arctic_scroll">프로필</a></li>
-                  <li><a href="#list" title="컨텐츠 리스트" class="arctic_scroll">컨텐츠</a></li>
-                  <li><a href="#portfolio" title="포트폴리오" class="arctic_scroll">포트폴리오</a></li>
-                  <li><a href="#gallery" title="갤러리" class="arctic_scroll">갤러리</a></li>
-                </ul>
-            </nav>
-        </div>
+      <div class="head">
+        <h1>
+          <a href="index.html" title="메인으로 바로가기">
+            <img src="./img/logo.png" alt="상단 로고" />
+          </a>
+        </h1>
+
+        <nav>
+          <ul class="gnb">
+            <li>
+              <a href="#profile" title="프로필" class="arctic_scroll">프로필</a>
+            </li>
+            <li>
+              <a href="#list" title="컨텐츠 리스트" class="arctic_scroll"
+                >컨텐츠</a
+              >
+            </li>
+            <li>
+              <a href="#portfolio" title="포트폴리오" class="arctic_scroll"
+                >포트폴리오</a
+              >
+            </li>
+            <li>
+              <a href="#gallery" title="갤러리" class="arctic_scroll">갤러리</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </header>
 
     <!-- 콘텐츠영역 시작 -->
     <main>
+      <!-- top 버튼 -->
+      <a href="#" id="MOVE_TOP_BTN">Top</a>
 
-        <!-- top 버튼 -->
-        <a href="#" id="MOVE_TOP_BTN">Top</a>
+      <!-- 인트로 -->
+      <section id="intro">
+        <div class="intro_box">
+          <span>2022 ver</span>
+          <p>INFINITY DESIGN.</p>
 
-        <!-- 인트로 -->
-        <section id="intro">
-          <div class="intro_box">
-            <span>2022 ver</span>
-            <p>INFINITY DESIGN.</p>
+          <ul>
+            <li>UI/UX</li>
+            <li>BRANDING</li>
+            <li>MOBILE WEB</li>
+            <li>EVENT PAGE</li>
+          </ul>
+        </div>
 
+        <img src="./img/logo_2.png" alt="인트로 로고" class="photo" />
+      </section>
+
+      <!-- 프로필 -->
+      <section id="profile">
+        <div class="profile_box">
+          <p>RESUME</p>
+          <img src="./img/icon01.png" alt="프로필" />
+          <div class="self_img">
+            <img src="./img/profile02.png" alt="프로필 사진" />
+          </div>
+
+          <ul>
+            <li>박 초 롱</li>
+            <li>CHO RONG PARK</li>
+            <li>1991. 07. 05 SEOUL</li>
+            <li>82) 10-9550-9175</li>
+            <li>crew_75@naver.com</li>
+            <li>
+              뫼비우스의 띠처럼 멈춤없이, 끊임없이<br />무한한 생각과 가능성을
+              가진 제작자로<br />계속 성장하고 발전해나가는 것이 목표입니다.
+            </li>
+          </ul>
+
+          <div class="line"></div>
+        </div>
+
+        <div class="profile_box2">
+          <ul>
+            <li>EDUCATION</li>
+            <li>2022 그린컴퓨터아트학원 웹디자인기능사 과정 수료</li>
+            <li>2017 더조은아카데미학원 웹퍼블리셔 과정 수료</li>
+            <li>2012 서일대학교 광고디자인과 졸업</li>
+            <li>2010 청량고등학교 인문계 졸업</li>
+            <li>LICENSE</li>
+            <li>2022 웹디자인기능사 응시 대기</li>
+            <li>2021 포토샵 GTQ 1급</li>
+            <li>2002 워드프로세서 2급</li>
+            <li>2001 워드프로세서 3급</li>
+            <li>ACTIVITES</li>
+            <li>2011 서일대학교 졸업전시위원회 팀원</li>
+            <li>2011 제39회 전국대학생디자인공모전 입선</li>
+            <li>2011 제25회 (사)한국디자이너협의회 시각디자인 특선</li>
+            <li>2010 제16회 한국디자인트렌드대전 특선</li>
+            <li>2010 제7회 행주 공예디자인 대전 입선</li>
+          </ul>
+        </div>
+
+        <div class="profile_box3">
+          <ul>
+            <li>USED TOOLS</li>
+            <li>Photoshop &#x3000;AdobeXD &#x3000;illustrator</li>
+            <li>Dreamweaver &#x3000;InDesign &#x3000;OS &#x3000;VS Code</li>
+            <li>SKILL</li>
+          </ul>
+        </div>
+
+        <!-- 스킬바 -->
+        <div class="wrap">
+          <p>Photoshop</p>
+          <div class="container1">
+            <div class="bar photoshop">90%</div>
+          </div>
+
+          <p>Adobe XD</p>
+          <div class="container1">
+            <div class="bar xd">80%</div>
+          </div>
+
+          <p>Sketch</p>
+          <div class="container1">
+            <div class="bar sketch">60%</div>
+          </div>
+
+          <p>Illustrator</p>
+          <div class="container1">
+            <div class="bar ill">75%</div>
+          </div>
+
+          <p>Dreamweaver</p>
+          <div class="container1">
+            <div class="bar dream">65%</div>
+          </div>
+
+          <p>InDesign</p>
+          <div class="container1">
+            <div class="bar in">40%</div>
+          </div>
+
+          <p>VS Code</p>
+          <div class="container1">
+            <div class="bar vs">75%</div>
+          </div>
+
+          <p>OS</p>
+          <div class="container1">
+            <div class="bar os">85%</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 컨텐츠 -->
+      <section id="list">
+        <div class="list_box">
+          <p>CONTENTS LIST</p>
+          <img src="./img/icon02.png" alt="컨텐츠" />
+
+          <div class="list01">
+            <img src="./img/list01.png" alt="신라호텔" />
             <ul>
-                <li>UI/UX</li>
-                <li>BRANDING</li>
-                <li>MOBILE WEB</li>
-                <li>EVENT PAGE</li>
+              <li>웹페이지 리디자인</li>
+              <li>신라호텔 웹</li>
+              <li>신라호텔 태블릿</li>
+              <li>신라호텔 모바일</li>
             </ul>
           </div>
 
-          <img src="./img/logo_2.png" alt="인트로 로고" class="photo">
-        </section>
+          <div class="list02">
+            <img src="./img/list02.png" alt="바르다김선생" />
+            <ul>
+              <li>반응형 웹페이지 리디자인</li>
+              <li>바르다김선생 웹</li>
+              <li>바르다김선생 태블릿</li>
+              <li>바르다김선생 모바일</li>
+            </ul>
+          </div>
 
-        <!-- 프로필 -->
-        <section id="profile">
-            <div class="profile_box">
-                <p>RESUME</p>
-                <img src="./img/icon01.png" alt="프로필">
-                <div class="self_img">
-                    <img src="./img/profile02.png" alt="프로필 사진">
-                </div>
+          <div class="list03">
+            <img src="./img/list03.png" alt="에잇세컨즈" />
+            <ul>
+              <li>브랜드 기획전 페이지</li>
+              <li>에잇세컨즈 브랜드 기획전</li>
+            </ul>
+          </div>
 
-                <ul>
-                    <li>박 초 롱</li>
-                    <li>CHO RONG PARK</li>
-                    <li>1991. 07. 05 SEOUL</li>
-                    <li>82) 10-9550-9175</li>
-                    <li>crew_75@naver.com</li>
-                    <li>뫼비우스의 띠처럼 멈춤없이, 끊임없이<br>무한한 생각과 가능성을 가진 제작자로<br>계속 성장하고 발전해나가는 것이 목표입니다.</li>
-                </ul>
+          <div class="list04">
+            <img src="./img/list04.png" alt="리그오브레전드" />
+            <ul>
+              <li>웹 원페이지 리디자인</li>
+              <li>리그오브레전드 웹</li>
+            </ul>
+          </div>
 
-                <div class="line"></div>
-            </div>
+          <div class="list05">
+            <img src="./img/list05.png" alt="구좌당" />
+            <ul>
+              <li>모바일 웹페이지 리디자인</li>
+              <li>구좌당 모바일 웹</li>
+            </ul>
+          </div>
 
-            <div class="profile_box2">
-                <ul>
-                    <li>EDUCATION</li>
-                    <li>2022 그린컴퓨터아트학원 웹디자인기능사 과정 수료</li>
-                    <li>2017 더조은아카데미학원 웹퍼블리셔 과정 수료</li>
-                    <li>2012 서일대학교 광고디자인과 졸업</li>
-                    <li>2010 청량고등학교 인문계 졸업</li>
-                    <li>LICENSE</li>
-                    <li>2022 웹디자인기능사 응시 대기</li>
-                    <li>2021 포토샵 GTQ 1급</li>
-                    <li>2002 워드프로세서 2급</li>
-                    <li>2001 워드프로세서 3급</li>
-                    <li>ACTIVITES</li>
-                    <li>2011 서일대학교 졸업전시위원회 팀원</li>
-                    <li>2011 제39회 전국대학생디자인공모전 입선</li>
-                    <li>2011 제25회 (사)한국디자이너협의회 시각디자인 특선</li>
-                    <li>2010 제16회 한국디자인트렌드대전 특선</li>
-                    <li>2010 제7회 행주 공예디자인 대전 입선</li>
-                </ul>
-            </div>
-
-            <div class="profile_box3">
-                <ul>
-                    <li>USED TOOLS</li>
-                    <li>Photoshop &#x3000;AdobeXD &#x3000;illustrator</li>
-                    <li>Dreamweaver &#x3000;InDesign &#x3000;OS &#x3000;VS Code</li>
-                    <li>SKILL</li>
-                </ul>
-            </div>
-
-            <!-- 스킬바 -->
-            <div class="wrap">
-                <p>Photoshop</p>
-                <div class="container1">
-                    <div class="bar photoshop">90%</div>
-                </div>
-
-                <p>Adobe XD</p>
-                <div class="container1">
-                    <div class="bar xd">80%</div>
-                </div>
-
-                <p>Sketch</p>
-                <div class="container1">
-                    <div class="bar sketch">60%</div>
-                </div>
-
-                <p>Illustrator</p>
-                <div class="container1">
-                    <div class="bar ill">75%</div>
-                </div>
-
-                <p>Dreamweaver</p>
-                <div class="container1">
-                    <div class="bar dream">65%</div>
-                </div>
-
-                <p>InDesign</p>
-                <div class="container1">
-                    <div class="bar in">40%</div>
-                </div>
-
-                <p>VS Code</p>
-                <div class="container1">
-                    <div class="bar vs">75%</div>
-                </div>
-
-                <p>OS</p>
-                <div class="container1">
-                    <div class="bar os">85%</div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 컨텐츠 -->
-        <section id="list">
-            <div class="list_box">
-                <p>CONTENTS LIST</p>
-                <img src="./img/icon02.png" alt="컨텐츠">
-
-                <div class="list01">
-                    <img src="./img/list01.png" alt="신라호텔">
-                    <ul>
-                        <li>웹페이지 리디자인</li>
-                        <li>신라호텔 웹</li>
-                        <li>신라호텔 태블릿</li>
-                        <li>신라호텔 모바일</li>
-                    </ul>
-                </div>
-
-                <div class="list02">
-                    <img src="./img/list02.png" alt="바르다김선생">
-                    <ul>
-                        <li>반응형 웹페이지 리디자인</li>
-                        <li>바르다김선생 웹</li>
-                        <li>바르다김선생 태블릿</li>
-                        <li>바르다김선생 모바일</li>
-                    </ul>
-                </div>
-
-                <div class="list03">
-                    <img src="./img/list03.png" alt="에잇세컨즈">
-                    <ul>
-                        <li>브랜드 기획전 페이지</li>
-                        <li>에잇세컨즈 브랜드 기획전</li>
-                    </ul>
-                </div>
-
-                <div class="list04">
-                    <img src="./img/list04.png" alt="리그오브레전드">
-                    <ul>
-                        <li>웹 원페이지 리디자인</li>
-                        <li>리그오브레전드 웹</li>
-                    </ul>
-                </div>
-
-                <div class="list05">
-                    <img src="./img/list05.png" alt="구좌당">
-                    <ul>
-                        <li>모바일 웹페이지 리디자인</li>
-                        <li>구좌당 모바일 웹</li>
-                    </ul>
-                </div>
-
-                <div class="list06">
-                    <img src="./img/list06.png" alt="보스 스피커">
-                    <ul>
-                        <li>웹 상세페이지</li>
-                        <li>보스 스피커</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <div class="line2"></div>
-
-        <!-- 포트폴리오 -->
-        <section id="portfolio">
-            <div class="port_box">
-                <p>PORTFOLIO</p>
-                <img src="./img/icon03.png" alt="포트폴리오" class="p_title">
-                
-                <div class="p_con">
-                    <a href="./shila.html" title="신라호텔"><img src="./img/con01.png" alt="신라호텔"></a>
-                    <a href="./lol.html" title="라이엇게임즈"><img src="./img/con02.png" alt="라이엇게임즈"></a>
-                    <a href="./kim.html" title="바르다김선생"><img src="./img/con03.png" alt="바르다김선생"></a>
-                    <a href="./jeju.html" title="구좌당"><img src="./img/con04.png" alt="구좌당"></a>
-                    <a href="./8seconds.html" title="에잇세컨즈 기획전"><img src="./img/con05.png" alt="에잇세컨즈 기획전"></a>
-                    <a href="./bose.html" title="보스 스피커"><img src="./img/con06.png" alt="보스 스피커"></a>
-                </div>
-            </div>
-        </section>
-
-        <div class="line2"></div>
-
-        <!-- 갤러리 -->
-        <section id="gallery">
-            <div class="gal_box">
-                <p>GALLERY</p>
-                <img src="./img/icon04.png" alt="갤러리">
-            </div>
-        </section>
-
-        <!-- 갤러리 슬라이드 -->
-        <div class="slide_banner">
-             <div id="amazon_scroller2" class="amazon_scroller">
-                 <div class="amazon_scroller_mask">
-                     <ul>
-                         <li><a href="#" title="갤러리"><img src="./img/gal01.png" alt="갤러리"/></a></li>
-                         <li><img src="./img/gal02.png" alt="title"/></li>
-                         <li><img src="./img/gal03.png" alt="title"/></li>
-                         <li><img src="./img/gal05.png" alt="title"/></li>
-                         <li><img src="./img/gal04.png" alt="title"/></li>                        
-                     </ul>
-                 </div>
-                 <ul class="amazon_scroller_nav">
-                     <li><img src="./img/arrow01.png" alt="왼쪽 더보기"></li>
-                     <li><img src="./img/arrow02.png" alt="오른쪽 더보기"></li>
-                 </ul>
-                 <div style="clear: both"></div>
-             </div>
+          <div class="list06">
+            <img src="./img/list06.png" alt="보스 스피커" />
+            <ul>
+              <li>웹 상세페이지</li>
+              <li>보스 스피커</li>
+            </ul>
+          </div>
         </div>
+      </section>
 
+      <div class="line2"></div>
+
+      <!-- 포트폴리오 -->
+      <section id="portfolio">
+        <div class="port_box">
+          <p>PORTFOLIO</p>
+          <img src="./img/icon03.png" alt="포트폴리오" class="p_title" />
+
+          <div class="p_con">
+            <a href="#" title="신라호텔">
+              <div class="s_box">
+                <a href="./shila.html" title="상세보기">상세보기</a>
+                <a href="https://rosieflo.github.io/Shila/" title="사이트보기">사이트보기</a>
+              </div>
+              <img src="./img/con01.png" alt="신라호텔" class="shila_box" />
+            </a>
+
+            <a href="#" title="라이엇게임즈">
+              <div class="l_box">
+                <a href="./lol.html" title="상세보기">상세보기</a>
+                <a href="https://rosieflo.github.io/LOL/" title="사이트보기">사이트보기</a>
+              </div>
+              <img src="./img/con02.png" alt="라이엇게임즈" class="lol_box" />
+            </a>
+
+            <a href="#" title="바르다김선생">
+              <div class="k_box">
+                <a href="./kim.html" title="상세보기">상세보기</a>
+                <a href="https://rosieflo.github.io/Kimteacher/" title="사이트보기">사이트보기</a>
+              </div>
+              <img src="./img/con03.png" alt="바르다김선생" class="kim_box" />
+            </a>
+
+            <a href="#" title="구좌당">
+              <div class="g_box">
+                <a href="./jeju.html" title="상세보기">상세보기</a>
+              </div>
+              <img src="./img/con04.png" alt="구좌당" class="gu_box" />
+            </a>
+
+            <a href="#" title="에잇세컨즈 기획전">
+              <div class="e_box">
+                <a href="./8seconds.html" title="상세보기">상세보기</a>
+              </div>
+              <img src="./img/con05.png" alt="에잇세컨즈 기획전" class="eight_box" />
+            </a>
+
+            <a href="#" title="보스 스피커">
+              <div class="b_box">
+                <a href="./bose.html" title="상세보기">상세보기</a>
+                <a href="http://soundpower.co.kr/product/detail.html?product_no=5752&cate_no=404&display_group=1" title="사이트보기">사이트보기</a>
+              </div>
+              <img src="./img/con06.png" alt="보스 스피커" class="bose_box" />
+            </a>
+
+          </div>
+        </div>
+      </section>
+
+      <div class="line2"></div>
+
+      <!-- 갤러리 -->
+      <section id="gallery">
+        <div class="gal_box">
+          <p>GALLERY</p>
+          <img src="./img/icon04.png" alt="갤러리" />
+        </div>
+      </section>
+
+      <!-- 갤러리 슬라이드 -->
+      <div class="slide_banner">
+        <div id="amazon_scroller2" class="amazon_scroller">
+          <div class="amazon_scroller_mask">
+            <ul>
+              <li>
+                <a href="#" title="갤러리"
+                  ><img src="./img/gal01.png" alt="갤러리"
+                /></a>
+              </li>
+              <li><img src="./img/gal02.png" alt="title" /></li>
+              <li><img src="./img/gal03.png" alt="title" /></li>
+              <li><img src="./img/gal05.png" alt="title" /></li>
+              <li><img src="./img/gal04.png" alt="title" /></li>
+            </ul>
+          </div>
+          <ul class="amazon_scroller_nav">
+            <li><img src="./img/arrow01.png" alt="왼쪽 더보기" /></li>
+            <li><img src="./img/arrow02.png" alt="오른쪽 더보기" /></li>
+          </ul>
+          <div style="clear: both"></div>
+        </div>
+      </div>
     </main>
 
     <!-- 푸터영역 시작 -->
     <footer>
-        <div class="f_box">
-            <p>Contact Me 010.9550.9175</p>
-            <p>Copyright ⓒ 2022 Chorong All Rights Reserved.</p>
-        </div>
+      <div class="f_box">
+        <p>Contact Me 010.9550.9175</p>
+        <p>Copyright ⓒ 2022 Chorong All Rights Reserved.</p>
+      </div>
     </footer>
 
-    <!-- 아크틱 스크롤_부드럽게 올라갔다 내려갔다 -->
+    <!-- 아크틱 스크롤 -->
     <script src="./script/jquery.arctic_scroll.js"></script>
     <script>
-        $(function(){
-         $(".arctic_scroll").arctic_scroll({
-                speed: 800
-             });
-         });
+      $(function () {
+        $(".arctic_scroll").arctic_scroll({
+          speed: 800,
+        });
+      });
     </script>
-
-</body>
+  </body>
 </html>
